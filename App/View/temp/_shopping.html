@@ -1,0 +1,51 @@
+<div class="container">
+    <form action="">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="text-center">购物车</h1>
+            </div>
+            <div class="panel-body" id="main">
+                <ul class="list">
+                    <li class="list-group-item" ng-repeat="val in products">
+                        <dl>
+                            <dt>
+                                <img ng-src="{{val.image}}">
+                            </dt>
+                            <dd class="container">
+                                <p class="f18">
+                                    <span class="float-right text-light-red f14">{{val.price}}</span>
+                                    <b>{{val.tit}}</b>
+                                </p>
+                                <p>
+                                    <label form="count1" class="f14">数量:
+                                        <button type="button" class="btn btn-default jian ">-</button>
+                                        <input type="text" value="1" id="count1" class="text-center">
+                                        <button type="button" class="btn btn-default add">+</button>
+                                    </label>
+                                    <b class="text-light-red f16 float-right">￥{{val.price}}</b>
+                                </p>
+                                <p class="f16">
+                                    <button class="btn btn-warning  float-right">删除</button>
+                                    <span>{{val.content}}</span>
+                                </p>
+                            </dd>
+                        </dl>
+                        <div class="checkbox" ng-class="{on:flag}" ng-click=""></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-success float-right">结算</button>
+                <p>
+                    <b>
+                        全选：<span ng-class="{on:flag}" class="checkbox-all"></span>{{flag}}
+                    </b>
+                    <span>您已准备购买</span>
+                    <input type="text" value="{{goodsCount}}" id="num">
+                    <span>总计:</span>
+                    <input type="text" value="{{goodsPrice}}" id="p">
+                </p>
+            </div>
+        </div>
+    </form>
+</div>
